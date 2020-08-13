@@ -40,7 +40,7 @@ export default class OtaManager {
     this.options = { ...defaultOptions, ...options };
   }
 
-  public handleNewBundle = async (manifest: Updates.Manifest) => {
+  public handleNewBundle = async () => {
     const hourInMS = 1000 * 60 * 60;
     if (
       this.lastPrompt &&
@@ -74,12 +74,12 @@ export default class OtaManager {
     const { isAvailable } = (await Updates.checkForUpdateAsync()) || {};
 
     if (isAvailable) {
-      const { isNew, manifest } = (await Updates.fetchUpdateAsync()) as {
+      const { isNew } = (await Updates.fetchUpdateAsync()) as {
         isNew: true;
         manifest: Updates.Manifest;
       };
       if (isNew) {
-        this.handleNewBundle(manifest);
+        this.handleNewBundle();
       }
     }
   };
