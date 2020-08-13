@@ -1,6 +1,6 @@
 {
   "name": "expo-ota-manager",
-  "version": "0.0.2-alpha.1",
+  "version": "0.0.2",
   "description": "A helper plugin to manage Over-The-Air updates when your app is running",
   "main": "dist/index.js",
   "scripts": {
