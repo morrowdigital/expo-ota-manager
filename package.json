@@ -1,0 +1,30 @@
+{
+  "name": "expo-ota-manager",
+  "version": "0.0.2-alpha.1",
+  "description": "A helper plugin to manage Over-The-Air updates when your app is running",
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "eslint --ext .ts,.tsx .",
+    "build": "rollup -c",
+    "start": "rollup -c -w"
+  },
+  "repository": "https://github.com/app-sapiens/expo-ota-manager.git",
+  "author": "tom@appsapiens.uk",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "devDependencies": {
+    "babel-preset-expo": "^8.2.3",
+    "eslint": "^7.6.0",
+    "rollup": "^2.23.1",
+    "rollup-plugin-typescript2": "^0.27.2",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@types/react-native": "^0.63.7",
+    "expo-updates": "^0.2.14",
+    "react-native": "^0.63.2"
+  }
+}
