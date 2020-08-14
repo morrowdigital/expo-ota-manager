@@ -60,12 +60,11 @@ const styles = StyleSheet.create({
 
 ## Available props
 
-| Name                      | Type   | Default                              | Description                                                                                                           |
-| ------------------------- | ------ | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| noButtonText              | string | "Not now"                            | No button text                                                                                                        |
-| yesButtonText             | string | "Restart"                            | Yes button text                                                                                                       |
-| titleText                 | string | "A new version is available"         | Title text                                                                                                            |
-| textLine1                 | string | "Restart your app to start using it" | Text line 1                                                                                                           |
-| textLine2                 | string | "New Version"                        | Text line 2                                                                                                           |
-| repromptIntervalMs        | number | hourInMS                             | How often to remind a user to restart for an update                                                                   |
-| foregroundCheckIntervalMs | number | 0 (don't run)                        | Time interval for an additional check that runs constantly - if you are concerned about app not going into background |
+| Name                      | Type     | Default                                                      | Description                                                                                                           |
+| ------------------------- | -------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| noButtonText              | string   | "Not now"                                                    | No button text                                                                                                        |
+| yesButtonText             | string   | "Restart"                                                    | Yes button text                                                                                                       |
+| titleText                 | string   | "A new version is available"                                 | Title text                                                                                                            |
+| textLines                 | string[] | ["An update is ready", "Restart your app to start using it"] | The text that will appear in the alert                                                                                |
+| repromptIntervalMs        | number   | hourInMS                                                     | How often to remind a user to restart for an update                                                                   |
+| foregroundCheckIntervalMs | number   | 0 (don't run)                                                | Time interval for an additional check that runs constantly - if you are concerned about app not going into background |
