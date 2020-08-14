@@ -1,10 +1,12 @@
 # expo-ota-manager
 
 <p align="center">
-  <img width="150" src="expo-ota-manager.svg">
+  <img alt="Expo OTA manager" width="150" src="expo-ota-manager.svg">
 </p>
 <p align="center">
-  <img width="200" src="app-sap.png">
+  <a href="https://appsapiens.uk/">
+    <img alt="App sapiens" width="200" src="app-sap.png">
+  </a>
 </p>
 A helper plugin to manage Over-The-Air updates when your app is running
 
