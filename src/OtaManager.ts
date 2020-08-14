@@ -31,8 +31,7 @@ export default class OtaManager {
     const defaultOptions: IOptions = {
       noButtonText: "Not now",
       yesButtonText: "Restart",
-      textLine1: "A new version is available",
-      textLine2: "Restart your app to start using it",
+      textLines: ["An update is ready", "Restart your app to start using it"],
       titleText: "New Version",
       repromptIntervalMs: hourInMS,
       foregroundCheckIntervalMs: 0,
@@ -59,7 +58,7 @@ export default class OtaManager {
 
     const restartConfirm = await showConfirmAlert(
       this.options.titleText,
-      `${this.options.textLine1}\n${this.options.textLine2}`,
+      this.options.textLines.join("\n"),
       this.options.yesButtonText,
       this.options.noButtonText
     );
