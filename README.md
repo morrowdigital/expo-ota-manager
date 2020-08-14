@@ -1,9 +1,11 @@
 # expo-ota-manager
 
-<div style="justify-content: center; align-items: center; display: flex; flex-direction: column;margin-bottom: 2em;">
-  <img style="width: 150px;margin-bottom: 2em;" src="expo-ota-manager.svg">
-  <img style="width: 200px;" src="app-sap.png">
-</div>
+<p align="center">
+  <img width="150" src="expo-ota-manager.svg">
+</p>
+<p align="center">
+  <img width="200" src="app-sap.png">
+</p>
 A helper plugin to manage Over-The-Air updates when your app is running
 
 This library is designed to help keep your Expo application up to date.
