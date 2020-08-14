@@ -29,6 +29,10 @@ If there are any new updates available, it will download them in the background 
 
 ## Usage
 
+```
+yarn add expo-ota-manager
+```
+
 ```javascript
 import * as React from "react";
 import { Text, View, StyleSheet } from "react-native";
