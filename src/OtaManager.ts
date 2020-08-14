@@ -1,4 +1,4 @@
-import * as Updates from "expo-updates";
+import Updates from "expo-updates";
 import { Alert, AppState, AppStateStatus } from "react-native";
 import { IOptions } from "./IOptions";
 
@@ -22,7 +22,7 @@ export const showConfirmAlert = async (
 
 export default class OtaManager {
   private lastPrompt: Date | null = null;
-  private lastAppState: string = "background";
+  private lastAppState: AppStateStatus = "background";
   private options: IOptions;
 
   constructor(options: Partial<IOptions>) {
@@ -71,20 +71,17 @@ export default class OtaManager {
   };
 
   private handleAppStateChange = (nextAppState: AppStateStatus) => {
-    if (this.lastAppState.match(/background/) && nextAppState === "active") {
+    if (this.lastAppState === "background" && nextAppState === "active") {
       this.checkForNewAppVersion();
     }
     this.lastAppState = nextAppState;
   };
 
   private checkForNewAppVersion = async () => {
-    const { isAvailable } = (await Updates.checkForUpdateAsync()) || {};
+    const { isAvailable } = await Updates.checkForUpdateAsync();
 
     if (isAvailable) {
-      const { isNew } = (await Updates.fetchUpdateAsync()) as {
-        isNew: true;
-        manifest: Updates.Manifest;
-      };
+      const { isNew } = await Updates.fetchUpdateAsync();
       if (isNew) {
         this.handleNewBundle();
       }
