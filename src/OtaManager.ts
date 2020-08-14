@@ -26,8 +26,7 @@ export default class OtaManager {
   private options: IOptions;
 
   constructor(options: Partial<IOptions>) {
-    AppState.addEventListener("change", this.handleAppStateChange);
-    setInterval(this.checkForNewAppVersion, 10000);
+    const hourInMS = 1000 * 60 * 60;
 
     const defaultOptions: IOptions = {
       noButtonText: "Not now",
@@ -35,16 +34,25 @@ export default class OtaManager {
       textLine1: "A new version is available",
       textLine2: "Restart your app to start using it",
       titleText: "New Version",
+      repromptIntervalMs: hourInMS,
+      foregroundCheckIntervalMs: 0,
     };
 
     this.options = { ...defaultOptions, ...options };
+
+    AppState.addEventListener("change", this.handleAppStateChange);
+
+    const { foregroundCheckIntervalMs } = this.options;
+    if (foregroundCheckIntervalMs > 0) {
+      setInterval(this.checkForNewAppVersion, foregroundCheckIntervalMs);
+    }
   }
 
-  public handleNewBundle = async () => {
-    const hourInMS = 1000 * 60 * 60;
+  private handleNewBundle = async () => {
     if (
       this.lastPrompt &&
-      new Date().getTime() - this.lastPrompt.getTime() < hourInMS
+      new Date().getTime() - this.lastPrompt.getTime() <
+        this.options.repromptIntervalMs
     ) {
       return;
     }

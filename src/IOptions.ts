@@ -4,4 +4,6 @@ export interface IOptions {
   titleText: string;
   textLine1: string;
   textLine2: string;
+  repromptIntervalMs: number;
+  foregroundCheckIntervalMs: number;
 }
