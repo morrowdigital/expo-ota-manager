@@ -8,6 +8,16 @@
     <img alt="App sapiens" width="200" src="app-sap.png">
   </a>
 </p>
+
+<p align="center">
+    <a href="https://www.npmjs.com/package/expo-ota-manager" alt="npm">
+        <img src="https://img.shields.io/npm/v/expo-ota-manager" />
+    </a>
+    <a href="https://expo.io/" alt="expo.io">
+        <img src="https://img.shields.io/badge/Runs%20with%20Expo-000.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000" />
+    </a>
+</p>
+
 A helper plugin to manage Over-The-Air updates when your app is running
 
 This library is designed to help keep your Expo application up to date.
@@ -18,6 +28,10 @@ When you instantiate this library it will check for new app updates every time y
 If there are any new updates available, it will download them in the background and then prompt the user to restart their app to use the new version.
 
 ## Usage
+
+```
+yarn add expo-ota-manager
+```
 
 ```javascript
 import * as React from "react";
