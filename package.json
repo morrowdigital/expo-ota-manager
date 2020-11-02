@@ -25,6 +25,6 @@
   },
   "dependencies": {
     "expo-updates": "~0.3.3",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.0.tar.g"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.0.tar.gz"
   }
 }
