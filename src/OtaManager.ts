@@ -1,4 +1,4 @@
-import Updates from "expo-updates";
+import * as Updates from "expo-updates";
 import { Alert, AppState, AppStateStatus } from "react-native";
 import { IOptions } from "./IOptions";
 
