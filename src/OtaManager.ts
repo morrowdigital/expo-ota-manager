@@ -48,25 +48,29 @@ export default class OtaManager {
   }
 
   private handleNewBundle = async () => {
-    if (
-      this.lastPrompt &&
-      new Date().getTime() - this.lastPrompt.getTime() <
-        this.options.repromptIntervalMs
-    ) {
-      return;
-    }
+    try {
+      if (
+        this.lastPrompt &&
+        new Date().getTime() - this.lastPrompt.getTime() <
+          this.options.repromptIntervalMs
+      ) {
+        return;
+      }
 
-    const restartConfirm = await showConfirmAlert(
-      this.options.titleText,
-      this.options.textLines.join("\n"),
-      this.options.yesButtonText,
-      this.options.noButtonText
-    );
+      const restartConfirm = await showConfirmAlert(
+        this.options.titleText,
+        this.options.textLines.join("\n"),
+        this.options.yesButtonText,
+        this.options.noButtonText
+      );
 
-    this.lastPrompt = new Date();
+      this.lastPrompt = new Date();
 
-    if (restartConfirm) {
-      Updates.reloadAsync();
+      if (restartConfirm) {
+        Updates.reloadAsync();
+      }
+    } catch (error) {
+      console.warn("expo-ota-updates: Error handling new bundle", error);
     }
   };
 
@@ -78,13 +82,20 @@ export default class OtaManager {
   };
 
   private checkForNewAppVersion = async () => {
-    const { isAvailable } = await Updates.checkForUpdateAsync();
+    try {
+      const { isAvailable } = await Updates.checkForUpdateAsync();
 
-    if (isAvailable) {
-      const { isNew } = await Updates.fetchUpdateAsync();
-      if (isNew) {
-        this.handleNewBundle();
+      if (isAvailable) {
+        const { isNew } = await Updates.fetchUpdateAsync();
+        if (isNew) {
+          this.handleNewBundle();
+        }
       }
+    } catch (error) {
+      console.warn(
+        "expo-ota-updates: Error checking for new app version",
+        error
+      );
     }
   };
 }
