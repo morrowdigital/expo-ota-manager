@@ -27,6 +27,10 @@ The default initialised value for [fallbackToCacheTimeout](https://docs.expo.io/
 When you instantiate this library it will check for new app updates every time your app opens from the background.
 If there are any new updates available, it will download them in the background and then prompt the user to restart their app to use the new version.
 
+<p align="center">
+    <img alt="Expo OTA manager example" width="250" src="example.jpg">
+</p>
+
 ## Attention!
 
 Since version `1.1.4` expo-updates is now a peer dependency. This means you must install expo-updates with `expo install expo-updates` before the package will work.
