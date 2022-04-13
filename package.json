@@ -8,8 +8,8 @@
     "build": "rollup -c",
     "start": "rollup -c -w"
   },
-  "repository": "https://github.com/app-sapiens/expo-ota-manager.git",
-  "author": "tom@appsapiens.uk",
+  "repository": "https://github.com/morrowdigital/expo-ota-manager.git",
+  "author": "tom@themorrow.digital",
   "license": "MIT",
   "peerDependencies": {
     "react": "^16.8.0",

@@ -4,8 +4,8 @@
   <img alt="Expo OTA manager" width="150" src="expo-ota-manager.svg">
 </p>
 <p align="center">
-  <a href="https://appsapiens.uk/">
-    <img alt="App sapiens" width="200" src="app-sap.png">
+  <a href="https://themorrow.digital/">
+    <img alt="Morrow" width="200" src="love-morrow.png">
   </a>
 </p>
 
