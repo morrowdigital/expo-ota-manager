@@ -35,6 +35,9 @@ If there are any new updates available, it will download them in the background 
 
 Since version `1.1.4` expo-updates is now a peer dependency. This means you must install expo-updates with `expo install expo-updates` before the package will work.
 
+> Make sure you install and configure correclty according to the instructions in the official documentation. Notice that `expo-update` need plugin configuration. See docs: 
+[Expo Updates](https://docs.expo.dev/versions/latest/sdk/updates/)
+
 ## Usage
 
 ```
